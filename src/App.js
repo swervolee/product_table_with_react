@@ -121,6 +121,58 @@ const PRODUCTS = [
   {category: "Vegetables", price: "$1", stocked: true, name: "Peas"}
 ];
 
+function Header() {
+  return (
+    <header className="bg-gray-800 text-white p-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        
+        <div className="text-xl font-semibold">
+          <span className="text-yellow-400">My</span>App
+        </div>
+
+        
+        <nav className="space-x-6">
+          <a href="/" className="hover:text-yellow-400 transition duration-200">Home</a>
+          <a href="/about" className="hover:text-yellow-400 transition duration-200">About</a>
+          <a href="/services" className="hover:text-yellow-400 transition duration-200">Services</a>
+          <a href="/contact" className="hover:text-yellow-400 transition duration-200">Contact</a>
+        </nav>
+
+      
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="px-4 py-2 rounded-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          />
+          <button className="absolute top-0 right-0 mt-2 mr-3 text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-4.35-4.35M18 10.5A7.5 7.5 0 1110.5 18a7.5 7.5 0 017.5-7.5z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+
 export default function App() {
-  return <FilterableProductTable products={PRODUCTS} />;
+  return (
+  <>
+    <Header />
+    <FilterableProductTable products={PRODUCTS} />;
+  </>
+  );
 }
