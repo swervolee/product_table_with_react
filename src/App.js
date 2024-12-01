@@ -48,19 +48,19 @@ function Header() {
 
 function Footer() {
   return (
-    <div className='bg-gray-800 text-white'>
-      <div className=' mx-auto flex justify-around m-top:auto'>
-      <nav className="space-x-6">
+    <div className="bg-gray-800 text-white">
+      <div className="mx-auto flex justify-around mt-auto py-4">
+        <nav className="space-x-6 flex align-center">
           <a href="/" className="hover:text-yellow-400 transition duration-200">Home</a>
           <a href="/about" className="hover:text-yellow-400 transition duration-200">About</a>
           <a href="/services" className="hover:text-yellow-400 transition duration-200">Services</a>
           <a href="/contact" className="hover:text-yellow-400 transition duration-200">Contact</a>
         </nav>
-
       </div>
     </div>
-  )
+  );
 }
+
 
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
@@ -187,10 +187,10 @@ const PRODUCTS = [
 
 export default function App() {
   return (
-  <>
+  <div className='min-h-screen flex flex-col'>
     <Header />
     <FilterableProductTable products={PRODUCTS} />;
     <Footer />
-  </>
+  </div>
   );
 }
